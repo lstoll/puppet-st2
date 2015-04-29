@@ -11,7 +11,7 @@ angular.module('main')
       <%- end -%>
       <%- if @auth_url -%>
       url: '<%= @auth_url %>',
-      <%- else -%>
+      <%- elsif @auth -%>
       auth: 'http://:9100',
       <%- end -%>
     }]
