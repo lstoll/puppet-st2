@@ -8,6 +8,9 @@
 #  [*version*]            - Version of StackStorm to install
 #  [*revision*]           - Revision of StackStorm to install
 #  [*mistral_git_branch*] - Tagged branch of Mistral to download/install
+#  [*auth*]               - Flag to enable/disable auth (disabled by default)
+#  [*api_url*]            - URL/Port combination for StackStorm API
+#  [*web_url*]            - URL/Port combination for StackStorm WebUI
 #
 #  Variables can be set in Hiera and take advantage of automatic data bindings:
 #
@@ -18,8 +21,8 @@
 class st2(
   $version            = '0.8.3',
   $revision           = undef,
-  $st2_api_url        = undef,
   $mistral_git_branch = 'st2-0.8.1',
-  $web                = false,
   $auth               = false,
+  $api_url            = undef,
+  $web_url            = undef,
 ) { }

@@ -7,8 +7,9 @@
 #
 # === Parameters
 #
-#  [*st2_api_url*]  - URL of st2_api service -- ex: http://127.0.0.1:9101
-#  [*version*]      - Version of StackStorm WebUI to install
+#  [*api_url*]  - URL of st2_api service -- ex: http://127.0.0.1:9101
+#  [*auth_url*] - URL of st2_api service -- ex: http://127.0.0.1:9100
+#  [*version*]  - Version of StackStorm WebUI to install
 #
 # === Variables
 #
@@ -16,11 +17,12 @@
 #
 # === Examples
 #
-#  include ::nginx
+#  include ::st2::profile::web
 #
 class st2::profile::web(
-  $st2_api_url    = $::st2::st2_api_url,
-  $version        = $::st2::version,
+  $api_url  = $::st2::api_url,
+  $auth_url = $::st2::auth_url,
+  $version  = $::st2::version,
 ) inherits st2 {
   file { [
       '/opt/stackstorm/static',
